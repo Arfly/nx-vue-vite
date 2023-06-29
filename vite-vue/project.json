@@ -6,9 +6,11 @@
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/vite-vue",
+        "outputPath": "vite-vue/dist/",
         "main": "vite-vue/src/index.ts",
         "tsConfig": "vite-vue/tsconfig.lib.json",
         "assets": [
@@ -38,11 +40,15 @@
     },
     "publish": {
       "command": "node tools/scripts/publish.mjs vite-vue {args.ver} {args.tag}",
-      "dependsOn": ["build"]
+      "dependsOn": [
+        "build"
+      ]
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "vite-vue/**/*.ts",
@@ -54,7 +60,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "vite-vue/jest.config.ts",
         "passWithNoTests": true
