@@ -1,12 +1,21 @@
 {
   "name": "nx-vite-vue",
-  "version": "0.0.4",
+  "version": "0.1.4",
   "license": "MIT",
   "main": "./src/index.js",
-  "author": "arfly33",
+  "repository": {
+    "url": "https://github.com/Arfly/nx-vue-vite"
+  },
+  "keywords": [
+    "Nx",
+    "vue",
+    "Nx plugin",
+    "Vite"
+  ],
+  "description": "Nx plugin for Vue3+vite",
   "scripts": {
     "build": "nx build",
-    "publish": "nx build && cd ./dist && npm publish"
+    "pub": "nx build && cd ./dist && npm publish"
   },
   "executors": "./executors.json",
   "generators": "./generators.json",
@@ -32,6 +41,7 @@
     "jest": "^29.4.1",
     "jest-environment-jsdom": "^29.4.1",
     "nx": "16.4.0",
+    "nx-vite-vue": "^0.1.4",
     "prettier": "^2.6.2",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",

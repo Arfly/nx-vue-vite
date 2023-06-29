@@ -8,7 +8,7 @@ import * as path from 'path';
 import { CompGeneratorSchema } from './schema';
 
 export async function compGenerator(tree: Tree, options: CompGeneratorSchema) {
-  const projectRoot = `libs/${options.name}`;
+  const projectRoot = `packages/${options.name}`;
   addProjectConfiguration(tree, options.name, {
     root: projectRoot,
     projectType: 'library',
