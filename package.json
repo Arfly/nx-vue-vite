@@ -1,9 +1,12 @@
 {
   "name": "nx-vite-vue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
+  "main": "./src/index.js",
+  "author": "arfly33",
   "scripts": {
-    "build": "nx build"
+    "build": "nx build",
+    "publish": "nx build && cd ./dist && npm publish"
   },
   "executors": "./executors.json",
   "generators": "./generators.json",
