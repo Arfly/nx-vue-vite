@@ -1,0 +1,9 @@
+{
+  "executors": {
+    "vue": {
+      "implementation": "./src/executors/vue/executor",
+      "schema": "./src/executors/vue/schema.json",
+      "description": "vue executor"
+    }
+  }
+}
