@@ -1,6 +1,6 @@
 {
   "name": "nx-vite-vue",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "license": "MIT",
   "main": "./src/index.js",
   "repository": {
@@ -19,7 +19,6 @@
     "create:app": "nx g ./:app",
     "create:comp": "nx g ./:comp"
   },
-  "executors": "./executors.json",
   "generators": "./generators.json",
   "devDependencies": {
     "@nx/eslint-plugin": "16.4.0",

@@ -29,11 +29,6 @@
             "input": "./",
             "glob": "generators.json",
             "output": "."
-          },
-          {
-            "input": "./",
-            "glob": "executors.json",
-            "output": "."
           }
         ]
       }
