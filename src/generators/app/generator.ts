@@ -19,6 +19,7 @@ const DEPENDENCY = {
     typescript: '^5.0.2',
     vite: '^4.3.9',
     'vue-tsc': '^1.4.2',
+    'vite-tsconfig-paths': '^4.2.0',
   },
 };
 
