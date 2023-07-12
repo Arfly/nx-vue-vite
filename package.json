@@ -1,6 +1,6 @@
 {
   "name": "nx-vite-vue",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "license": "MIT",
   "main": "./src/index.js",
   "repository": {
