@@ -95,7 +95,7 @@ export async function appGenerator(tree: Tree, options: CompGeneratorSchema) {
     }
 
     c.paths[projectName] = [
-      joinPathFragments(projectRoot, './src', 'MyComponent.vue'),
+      joinPathFragments(projectRoot, './src/components', 'MyComponent.vue'),
     ];
 
     return {
