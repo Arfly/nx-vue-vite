@@ -13,22 +13,7 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {
-      "@fly/vite-vue": ["vite-vue/src/index.ts"],
-      "@vue-vite/.": ["src/index.ts"],
-      "@vue-vite/vite-vue": ["vite-vue/src/index.ts"],
-      "@vue-vite/vue3-vite": ["vue3-vite/src/index.ts"]
-    },
-    "types": ["vitest"]
+    "paths": {}
   },
-  "files": [],
-  "include": [],
-  "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    },
-    {
-      "path": "./tsconfig.spec.json"
-    }
-  ]
+  "types": ["vitest"]
 }
