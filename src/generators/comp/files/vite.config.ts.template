@@ -1,13 +1,28 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import viteTsConfigPaths from 'vite-tsconfig-paths';
+import path from 'path';
+import fs from 'fs';
+
+const tsconfigRoot = '../../';
+const tsconfigJSON = JSON.parse(
+  fs.readFileSync(path.resolve(tsconfigRoot, 'tsconfig.base.json'), {
+    encoding: 'utf-8',
+  })
+);
+
+tsconfigJSON.compilerOptions.paths ??= {};
+const aliasMap = {};
+
+for (const mapName in tsconfigJSON.compilerOptions.paths) {
+  const realPath = tsconfigJSON.compilerOptions.paths[mapName][0];
+  if (!aliasMap[mapName] && realPath) {
+    aliasMap[mapName] = path.resolve(tsconfigRoot, realPath);
+  }
+}
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
-    viteTsConfigPaths({
-      root: '../../',
-    }),
     vue()
   ],
   build: {
@@ -25,5 +40,8 @@ export default defineConfig({
       },
     },
     outDir: '../../dist/packages/<%= name %>/dist'
+  },
+  resolve: {
+    alias: aliasMap,
   }
 })

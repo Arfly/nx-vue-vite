@@ -111,6 +111,18 @@ export async function appGenerator(tree: Tree, options: CompGeneratorSchema) {
     };
   });
 
+  const eslintJSON = readJson(tree, '.eslintrc.json');
+  if (eslintJSON.exists()) {
+    eslintJSON['settings']['import/resolver']['alias']['map'] ??= [];
+    eslintJSON['settings']['import/resolver']['alias']['map'].push([
+      projectName,
+      joinPathFragments(projectRoot, './src/components', 'MyComponent.vue'),
+    ]);
+    updateJson(tree, '.eslintrc.json', (json) => {
+      return eslintJSON;
+    });
+  }
+
   const installTask = await addDependenciesToPackageJson(
     tree,
     DEPENDENCY.dependencies,
