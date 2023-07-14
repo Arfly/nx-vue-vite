@@ -117,7 +117,11 @@ export async function appGenerator(tree: Tree, options: CompGeneratorSchema) {
     eslintJSON['settings']['import/resolver']['alias']['map'] ??= [];
     eslintJSON['settings']['import/resolver']['alias']['map'].push([
       projectName,
-      joinPathFragments(projectRoot, './src/components', 'MyComponent.vue'),
+      `./${joinPathFragments(
+        projectRoot,
+        './src/components',
+        'MyComponent.vue'
+      )}`,
     ]);
     updateJson(tree, '.eslintrc.json', () => {
       return eslintJSON;
