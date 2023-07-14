@@ -111,14 +111,15 @@ export async function appGenerator(tree: Tree, options: CompGeneratorSchema) {
     };
   });
 
-  const eslintJSON = readJson(tree, '.eslintrc.json');
-  if (eslintJSON.exists()) {
+  const eslintJSONPath = joinPathFragments('.eslintrc.json');
+  if (tree.exists(eslintJSONPath)) {
+    const eslintJSON = readJson(tree, '.eslintrc.json');
     eslintJSON['settings']['import/resolver']['alias']['map'] ??= [];
     eslintJSON['settings']['import/resolver']['alias']['map'].push([
       projectName,
       joinPathFragments(projectRoot, './src/components', 'MyComponent.vue'),
     ]);
-    updateJson(tree, '.eslintrc.json', (json) => {
+    updateJson(tree, '.eslintrc.json', () => {
       return eslintJSON;
     });
   }
